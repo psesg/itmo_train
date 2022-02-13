@@ -28,6 +28,7 @@ def int2base(x, base):
 def any_base_to_decimal(number, base):
     return int(number, base)
 
+
 #print(int2base(66,8))
 mult = any_base_to_decimal("66", 8)
 #print("mult={}".format(mult))
@@ -37,7 +38,18 @@ for i in range(4, 36):
     first = any_base_to_decimal(int2base(i, 8), 8)
     second = any_base_to_decimal("13", i)
     if first * second == mult:
-        print(i)
+        print("task1={}".format(i))
         break
 
+
+#171
+lst =[]
+for i in range(4, 36):
+    second = any_base_to_decimal("123", i)
+    if second <= 171:
+        lst.append(i)
+print("task3=[{};{}]".format(min(lst),max(lst)))
+
+
+print("task5={}".format(2**13))
 
