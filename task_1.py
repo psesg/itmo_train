@@ -53,3 +53,15 @@ print("task3=[{};{}]".format(min(lst),max(lst)))
 
 print("task5={}".format(2**13))
 
+start = "ABBA"
+
+workstr = start
+
+while len(workstr) <= 40000:
+    workstr = workstr.replace("A", "CBC")
+    if len(workstr) > 40000:
+        break
+    workstr = workstr.replace("C", "ABA")
+    if len(workstr) > 40000:
+        break
+print("task10={} {} {}".format(workstr[887], workstr[10000], workstr[50001]))
