@@ -65,3 +65,13 @@ while len(workstr) <= 40000:
     if len(workstr) > 40000:
         break
 print("task10={} {} {}".format(workstr[887], workstr[10000], workstr[50001]))
+
+k=0
+for n in range(10,301):
+    res = 0
+    while n > 0:
+        res += n % 10
+        n //= 10
+    if res == 15:
+        k+=1
+print("task12={}".format(k))
