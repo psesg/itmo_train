@@ -79,6 +79,7 @@ print("task12={}".format(k))
 
 v = 384
 tmlist=[]
+szlist=[]
 
 size = 5
 for size in range(1, 384):
@@ -99,5 +100,7 @@ for size in range(1, 384):
         tm += 1  # time 4 check
     tm +=(rem+1)
     tmlist.append(tm)
-    print(size, tm)
-print(min(tmlist))
+    szlist.append(size)
+    #print(size, tm)
+ind = tmlist.index(min(tmlist))
+print(szlist[ind], int(min(tmlist)))
