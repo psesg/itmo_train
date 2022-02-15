@@ -75,3 +75,29 @@ for n in range(10,301):
     if res == 15:
         k+=1
 print("task12={}".format(k))
+
+
+v = 384
+tmlist=[]
+
+size = 5
+for size in range(1, 384):
+    kol = v // size
+    rem = v % size
+    #print(kol, rem)
+    tm = 0.0
+    tm_bef = tm
+    for i in range(kol):
+        tm_bef = tm
+        tm += size + 1 # sluj info
+        if tm_bef < 60.5 and tm > 60.5:
+            tm += size + 1 + 1 # repeat send and check again
+        if tm_bef < 116.5 and tm > 116.5:
+            tm += size + 1 + 1 # repeat send and check again
+        if tm_bef < 337.5 and tm > 337.5:
+            tm += size + 1 + 1 # repeat send and check again
+        tm += 1  # time 4 check
+    tm +=(rem+1)
+    tmlist.append(tm)
+    print(size, tm)
+print(min(tmlist))
